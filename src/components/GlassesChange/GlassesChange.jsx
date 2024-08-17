@@ -6,63 +6,63 @@ const GlassesChange = () => {
       id: 1,
       price: 30,
       name: "GUCCI G8850U",
-      url: "./public/glassesImage/v1.png",
+      url: "./glassesImage/v1.png",
       desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
     },
     {
       id: 2,
       price: 50,
       name: "GUCCI G8759H",
-      url: "./public/glassesImage/v2.png",
+      url: "./glassesImage/v2.png",
       desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
     },
     {
       id: 3,
       price: 30,
       name: "DIOR D6700HQ",
-      url: "./public/glassesImage/v3.png",
+      url: "./glassesImage/v3.png",
       desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
     },
     {
       id: 4,
       price: 70,
       name: "DIOR D6005U",
-      url: "./public/glassesImage/v4.png",
+      url: "./glassesImage/v4.png",
       desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
     },
     {
       id: 5,
       price: 40,
       name: "PRADA P8750",
-      url: "./public/glassesImage/v5.png",
+      url: "./glassesImage/v5.png",
       desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
     },
     {
       id: 6,
       price: 60,
       name: "PRADA P9700",
-      url: "./public/glassesImage/v6.png",
+      url: "./glassesImage/v6.png",
       desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
     },
     {
       id: 7,
       price: 80,
       name: "FENDI F8750",
-      url: "./public/glassesImage/v7.png",
+      url: "./glassesImage/v7.png",
       desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
     },
     {
       id: 8,
       price: 100,
       name: "FENDI F8500",
-      url: "./public/glassesImage/v8.png",
+      url: "./glassesImage/v8.png",
       desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
     },
     {
       id: 9,
       price: 60,
       name: "FENDI F4300",
-      url: "./public/glassesImage/v9.png",
+      url: "./glassesImage/v9.png",
       desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
     },
   ];
@@ -74,14 +74,16 @@ const GlassesChange = () => {
     desc: "",
   });
   console.log(selectedGlasses);
+
   const handleSelectedGlasses = (glasses) => {
     setSelectedGlasses(glasses);
   };
+
   return (
-    <div className="container min-h-screen bg-no-repeat bg-inherit bg-center bg-[url('./public/glassesImage/background.jpg')] ">
+    <div className="container min-h-screen bg-no-repeat bg-inherit bg-center bg-[url('./public/glassesImage/background.jpg')]">
       {/* title */}
-      <div className="header bg-black h-20 mx-72 flex items-center justify-center opacity-45">
-        <h1 className="uppercase text-center text-3xl text-white   font-bold">
+      <div className="header bg-black h-20 w-full  flex items-center justify-center">
+        <h1 className="uppercase  text-3xl text-white   font-bold">
           try glasses app online
         </h1>
       </div>
@@ -89,18 +91,15 @@ const GlassesChange = () => {
       <div className="modal flex m-auto items-center w-9/12 mx-auto ">
         <div className="modal_left flex justify-center w-1/2">
           <div className="relative">
-            <img
-              className="w-80 "
-              src="./public/glassesImage/model.jpg"
-              alt=""
-            />
+            <img className="w-80 " src="./glassesImage/model.jpg" alt="" />
             <div className="absolute left-14 top-20">
-              {" "}
               <img className="w-52" src={selectedGlasses.url} alt="" />
             </div>
             <div className="w-full absolute left-0 bottom-0 bg-cyan-400 opacity-60">
               <h1 className="text-red-700 font-bold">{selectedGlasses.name}</h1>
-              <h3>Price: {selectedGlasses.price} $</h3>
+              {selectedGlasses.price ? (
+                <h3>Price: {selectedGlasses.price} $</h3>
+              ) : null}
               <p>{selectedGlasses.desc}</p>
             </div>
           </div>
