@@ -105,7 +105,7 @@ const GlassesChange = () => {
           </div>
         </div>
         <div className="modal_right w-1/2 flex justify-center">
-          <img className="w-80 " src="./public/glassesImage/model.jpg" alt="" />
+          <img className="w-80 " src="./glassesImage/model.jpg" alt="" />
         </div>
       </div>
       {/* arr glass */}
